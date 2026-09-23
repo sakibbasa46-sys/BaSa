@@ -1,3 +1,4 @@
+
 workflows:
   android-workflow:
     name: Android Workflow
@@ -8,7 +9,9 @@ workflows:
         script: |
           flutter channel stable
           flutter upgrade
-          flutter doctor -v
+      - name: Create Native Android Project Structure
+        script: |
+          flutter create --platforms=android .
       - name: Get Flutter packages
         script: |
           flutter pub get
